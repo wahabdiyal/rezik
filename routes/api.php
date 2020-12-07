@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login',[UserController::class,'userLogin']);
 Route::post('signup',[UserController::class,'signUp']);
 Route::get('search',[UserController::class,'searchJob']);
+
+/***********************Company*******************************/
+Route::post('company/login',[CompanyController::class,'login']);
+Route::post('company/register',[CompanyController::class,'registerCompany']);
